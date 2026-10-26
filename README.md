@@ -14,6 +14,12 @@ It is a full-stack Next.js application with two halves:
 >
 > Ready to publish it? Follow [`DEPLOYMENT.md`](./DEPLOYMENT.md).
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Sksaran12/ShutterScape)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Sksaran12/ShutterScape)
+
+> Both buttons ask you to connect your own Vercel/Render account and fill in the
+> environment variables listed in [`DEPLOYMENT.md`](./DEPLOYMENT.md).
+
 ---
 
 ## 1. What the website is built for
