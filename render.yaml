@@ -1,0 +1,39 @@
+# Render Blueprint for ShutterScape
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Usage: Render Dashboard -> New -> Blueprint -> connect this repository.
+# Render creates the web service below and prompts for the `sync: false`
+# secrets. `NEXTAUTH_SECRET` is generated automatically.
+
+services:
+  - type: web
+    name: shutterscape
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start -- -H 0.0.0.0 -p $PORT
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22.23.2"
+      - key: NODE_ENV
+        value: production
+
+      # Prompted once in the Render dashboard. Never commit real values.
+      - key: MONGODB_URI
+        sync: false
+      - key: NEXTAUTH_SECRET
+        generateValue: true
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+
+      # Render does not have Vercel's 4.5 MB body limit, so 15 MB is safe.
+      # This value is compiled into the client bundle at build time.
+      - key: NEXT_PUBLIC_MAX_UPLOAD_MB
+        value: "15"
