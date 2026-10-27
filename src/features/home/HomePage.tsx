@@ -150,7 +150,7 @@ export default async function HomePage() {
           <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-6 xl:col-span-6">
               <ScrollReveal duration={0.6} distance={14}>
-                <p className="eyebrow rounded-full border border-forest/20 bg-forest/[0.06] px-3 py-1.5">
+                <p className="eyebrow rounded-full border border-forest/20 bg-forest/[0.06] px-3 py-1.5 tracking-[0.1em] min-[360px]:tracking-[0.16em] sm:tracking-[0.24em]">
                   <span className="relative flex h-1.5 w-1.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta/80" />
                     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-terracotta" />
@@ -212,12 +212,12 @@ export default async function HomePage() {
                   {stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="glass-panel group p-4 transition-all duration-500 hover:-translate-y-1 hover:border-forest/30"
+                      className="glass-panel group p-3 transition-all duration-500 hover:-translate-y-1 hover:border-forest/30 sm:p-4"
                     >
                       <dd className="font-display text-3xl font-semibold leading-none text-text-primary transition-colors group-hover:text-forest sm:text-4xl">
                         <CountUp to={stat.value} />
                       </dd>
-                      <dt className="mt-2 font-mono text-[9px] uppercase tracking-[0.2em] text-text-muted sm:text-[10px]">
+                      <dt className="mt-2 font-mono text-[8px] uppercase tracking-[0.1em] text-text-muted sm:text-[10px] sm:tracking-[0.2em]">
                         {stat.label}
                       </dt>
                     </div>
